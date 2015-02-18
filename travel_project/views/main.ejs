@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+  
+  <script>
+  	$(document).ready(function(){
+  		$("#menu").css("margin-top", $("body").height()/2-418);
+  	});
+  </script>
+  
+  	<div id="container_main">
+  		<div id="top_bar">
+  			<div id="logout_btn">logout</div>
+  			<div id="mypage_btn">mypage</div>
+  		</div>
+  		<div id="title_main">
+  			<img src="/images/icon_black.png" width="80px" height="100px" style="margin-right:10px;margin-bottom:10px;"></img>
+  			<img src="/images/title.png" width="500px" height="70px"></img>
+  		</div>
+  		<div id="board_bar"></div>
+  		<div id="msg_bar"></div>
+  		<div id="talk_bar"></div>
+  		<div id="menu">
+  		    <div id="board_menu" class="menu_style">
+  				<div id="board_btn"></div> 
+  				<img src="/images/board_text.png" width="170px" height="60px" style="margin:0 auto; display:block;"></img>
+  			</div>
+  			<div id="msg_menu" class="menu_style">
+  				<div id="msg_btn"></div> 
+  				<img src="/images/message_text.png" width="240px" height="60px" style="margin:0 auto; display:block;"></img>
+  			</div>
+  			<div id="talk_menu" class="menu_style" >
+  				<div id="talk_btn"></div> 
+  				<img src="/images/talk_text.png" width="100px" height="60px" style="margin:0 auto; display:block;"></img>
+  			</div>
+  		</div>
+  		
+  	</div>
+    
+  </body>
+</html>
