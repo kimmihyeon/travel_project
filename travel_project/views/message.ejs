@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  </head>
+  <body>
+  
+  <script>
+	$(document).ready(function(){
+		$(".detail_box").css("height", $("body").height() - $(".detail_title").height() - $("#top_bar").height() - 130 -60);
+		$(".detail_main").css("height", $(".detail_box").height() - $(".write_btn").height() - 50 );
+	});
+  </script>
+  
+  	<div id="container_detail">
+  		<div id="top_bar">
+  			<div id="logout_btn">logout</div>
+  			<div id="mypage_btn">mypage</div>
+  		</div>
+  		<div class="detail_top">
+  			<img src="/images/icon_black.png" width="50px" height="70px" style="margin-right:10px;margin-bottom:10px;"></img>
+  			<img src="/images/title.png" width="400px" height="55px"></img>
+  		</div>
+  		
+  		<div class="detail">
+	  		<div class="detail_title">
+	  			<img src="/images/msg_btn.png" width="320px" height="70px"></img>
+	  		</div>
+	  		<div class="detail_box" height="100px" style="background-color:#8a8649;">
+	  			<div style="display:table;width:100%">
+	  				<img class="write_btn" src="/images/msg_write_btn.png"></img>
+	  			</div>
+	  			<div class="detail_main" style="background-color:#e0dccc">
+	  				
+	  			</div>
+	  		</div>
+	  	</div>
+  	</div>
+    
+  </body>
+</html>

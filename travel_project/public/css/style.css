@@ -38,3 +38,13 @@ a {
 #menu{margin-left:5%; margin-right:5%;height:400px;position:relative;}
 
 
+/* board, message, talk 공통 css */
+#container_detail{width:100%; height:100%;background-image:url('/images/detail_background.png');background-repeat:no-repeat; background-size:100% 100%;}
+.detail_top{display:table;float:right;margin-right:100px;margin-top:40px;}
+.detail{min-width:500px;min-height:500px;width:80%; margin:0 auto;margin-top:130px;}
+.detail_main{margin:0 20px;}
+.table_style{width:100%;}
+.table_top{font-size:20px;text-align:center;}
+.table_row{}
+/* board 페이지 css */
+.write_btn{width:90px;height:40px;float:right;padding:15px 20px;}

@@ -9,7 +9,7 @@
   
   <script>
   	$(document).ready(function(){
-  		$("#menu").css("margin-top", $("body").height()/2-418);
+  		$("#menu").css("margin-top", $("body").height()/2-418);  
   	});
   </script>
   
@@ -26,15 +26,15 @@
   		<div id="msg_bar"></div>
   		<div id="talk_bar"></div>
   		<div id="menu">
-  		    <div id="board_menu" class="menu_style">
+  		    <div id="board_menu" class="menu_style" onclick="location.href='/board'">
   				<div id="board_btn"></div> 
   				<img src="/images/board_text.png" width="170px" height="60px" style="margin:0 auto; display:block;"></img>
   			</div>
-  			<div id="msg_menu" class="menu_style">
+  			<div id="msg_menu" class="menu_style" onclick="location.href='/message'">
   				<div id="msg_btn"></div> 
   				<img src="/images/message_text.png" width="240px" height="60px" style="margin:0 auto; display:block;"></img>
   			</div>
-  			<div id="talk_menu" class="menu_style" >
+  			<div id="talk_menu" class="menu_style" onclick="location.href='/talk'">
   				<div id="talk_btn"></div> 
   				<img src="/images/talk_text.png" width="100px" height="60px" style="margin:0 auto; display:block;"></img>
   			</div>
