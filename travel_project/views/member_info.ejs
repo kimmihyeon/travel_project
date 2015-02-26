@@ -1,0 +1,52 @@
+
+	<script>
+		function readimgURL(input) {
+			if (input.files && input.files[0]) {
+		    	var reader = new FileReader();
+		    	reader.onload = function (e) {
+		     	$('#info_photo').attr('src', e.target.result).width(130).height(130);
+		    };
+		    reader.readAsDataURL(input.files[0]);
+		  }
+		}
+	</script>
+	
+	<table id="info_table" style="margin:0 auto;margin-top:150px;font-weight:bold;font-size:17px;">
+	  	<tr>
+	  		<td>Name</td><td><input type="text"></td>
+	  	</tr>
+	  	<tr>
+	 		<td>ID</td><td><input type="text"></td>
+	 	</tr>
+	  	<tr>
+	 		<td>Password</td><td><input type="password"></td>
+		</tr>
+	  	<tr>
+	  		<td>Password_check</td><td><input type="password"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>Phone</td><td><input type="text"></td>
+	  	</tr>
+	  	<tr>
+	  		<td style="vertical-align:top;padding-top:10px;">Photo</td>
+	  		<td style="padding-top:10px;"><img id="info_photo" src="/images/noImg.png" alt="your image" />
+				<input id="selectedFile" type="file" onchange="readimgURL(this);" style="position:absolute;visibility:hidden;"/>
+				<img id="register_button" value="Browse..." onclick="selectedFile.click()">
+			</td>
+	  	</tr>
+	  	<% if(URL.indexOf('mypage') > 0 ){ %>
+	  	<tr>
+	  		<td style="padding-top:10px;">Kakaotalk</td>
+	  		<td style="padding-left:30px;padding-top:10px;">
+	  			<div id="kakao_on" class='kakao_setting kakao_on' onClick="kakao_setting()">On</div>
+	  			<div id="kakao_off" class="kakao_setting kakao_off" onClick="kakao_setting()">Off</div></td>
+	  	</tr>
+	  	<% } %>
+	</table>
+	<% if( URL.indexOf('mypage') < 0){ %>
+		<div id="info_table_btm" style="width:195px;padding:50px 0px;margin:0 auto;">
+			<div id="form_join_btn"></div><div id="form_cle_btn"></div>
+		</div>
+	<% } %>
+	
+	

@@ -11,6 +11,17 @@
 	$(document).ready(function(){
 		$(".detail_box").css("height", $("body").height() - $(".detail_title").height() - $("#top_bar").height() - 130 -60);
 		$(".detail_main").css("height", $(".detail_box").height() - $(".write_btn").height() - 50 );
+		$("#chat_place").css("width",$("#talk_container").width() - $("#chat_mbr").width() - 40);
+		$("#chat_place").css("height", $("#talk_container").height() - $("#msg_cnt").height() -20);
+		$("#chat_mbr").css("height",$("#chat_place").height());
+		$("#chat_mbr_list").css("height",$("#chat_mbr").height() - $("#chat_mbr_title").height() -24);
+		$("#msg_cnt").css("width",$("#talk_container").width() - $("#msg_send").width() - 20);
+	
+		$("#msg_send").click(function(){
+			var msg = $("#msg_cnt").val();
+			$("#msg_cnt").val("");
+			$("#chat_place").append("<div>"+msg+"</div>");
+		});
 	});
   </script>
   
@@ -28,12 +39,24 @@
 	  		<div class="detail_title">
 	  			<img src="/images/talk_title.png" width="200px" height="70px"></img>
 	  		</div>
-	  		<div class="detail_box" height="100px" style="background-color:#a39b36;">
-	  			<div style="display:table;width:100%">
+	  		<div class="detail_box">
+	  			<div style="display:table;width:100%;background-color:#a39b36;">
 	  				<img class="write_btn" src="/images/msg_write_btn.png"></img>
 	  			</div>
-	  			<div class="detail_main" style="background-color:#e7e3cc">
-	  				
+	  			<div class="detail_main" style="background:rgba(231,227,204,0.5);">
+	  				<div id="talk_container">
+	  					<div style="width:100%;margin-bottom:10px;">
+		  					<div id="chat_place"></div>
+		  					<div id="chat_mbr">
+		  						<div id="chat_mbr_title">Concurrent Users <span>[0]</span></div>
+								<div id="chat_mbr_list"></div>	  					
+		  					</div>
+	  					</div>
+	  					<div style="display:table;">
+		  					<input type="text" id="msg_cnt">
+		  					<div id="msg_send"><div>
+		  				</div>
+	  				</div>
 	  			</div>
 	  		</div>
 	  	</div>

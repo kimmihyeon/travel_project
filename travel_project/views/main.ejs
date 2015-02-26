@@ -9,14 +9,17 @@
   
   <script>
   	$(document).ready(function(){
+  	
   		$("#menu").css("margin-top", $("body").height()/2-418);  
   	});
+  	$("#mypage_btn").click(function(){
+  		
+  	});
   </script>
-  
   	<div id="container_main">
   		<div id="top_bar">
   			<div id="logout_btn">logout</div>
-  			<div id="mypage_btn">mypage</div>
+  			<div id="mypage_btn" onclick="javascript:location.href='/mypage'">mypage</div>
   		</div>
   		<div id="title_main">
   			<img src="/images/icon_black.png" width="80px" height="100px" style="margin-right:10px;margin-bottom:10px;"></img>

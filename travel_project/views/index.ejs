@@ -3,6 +3,18 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+    	$(document).ready(function(){
+    	
+	    	$("#form_cle_btn").click(function(){
+	    		$("#member_info").hide();
+	    	});
+	    	$("#join_btn").click(function(){
+	    		$("#member_info").show();
+	    	});
+    	});
+    </script>
   </head>
   <body>
   	<div id="container">
@@ -16,6 +28,9 @@
 	  		<div style="position:relative;top:120px;width:295px;margin:0 auto;">
 	  			<div id="join_btn"></div>
 	  			<div id="login_btn"></div>
+	  		</div>
+	  		<div id="member_info">
+	  			<% include member_info %>
 	  		</div>
 	  	</div>
 	  	

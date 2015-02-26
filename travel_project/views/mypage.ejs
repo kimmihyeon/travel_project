@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  </head>
+  <script>
+  	$(document).ready(function(){
+  	
+  		$("#info_table tr").children("td:first-child").attr("width","200px");
+  		$("#info_table").css("margin-top","0px");
+  		$(".container_mypage").css("height", $("body").height()- $("#top_bar").height()-$(".detail_top").height() - 60 );
+  	
+  		$("#myinfo_btn").click(function(){
+  			$("#info_category").show();
+  			$("#his_category").hide();
+  		});
+  		$("#his_btn").click(function(){
+  			$("#info_category").hide();
+  			$("#his_category").show();
+  		});
+  		
+  	});
+  	
+  	function kakao_setting(){
+  		if( $("#kakao_on").hasClass('kakao_on')){
+  			$("#kakao_on").addClass('kakao_off').removeClass('kakao_on');
+  			$("#kakao_off").addClass('kakao_on').removeClass('kakao_off');
+	  	}else{
+	  		$("#kakao_on").addClass('kakao_on').removeClass('kakao_off');
+  			$("#kakao_off").addClass('kakao_off').removeClass('kakao_on');
+	  	}
+  	}
+  
+  </script>
+  <body>
+  	<div id="container_main">
+  		<div id="top_bar">
+  			<div id="logout_btn">logout</div>
+  			<div id="mypage_btn">mypage</div>
+  		</div>
+  		<div class="detail_top">
+  			<img src="/images/icon_black.png" width="50px" height="70px" style="margin-right:10px;margin-bottom:10px;"></img>
+  			<img src="/images/title.png" width="400px" height="55px"></img>
+  		</div>
+  		
+  		<div class="container_mypage">
+  			<div id="mypage_top">
+  				<img src="/images/mypage_btn.png" width="200px" height="50px" style="margin-bottom:-6px;" ></img>
+  				<img src="/images/mypage_bar.png" width="100%" height="10px"></img>
+  				
+	  				<div id='myinfo_btn'></div>
+	  				<div id="his_btn"></div>
+  			</div>
+  			
+  			<div id="info_category">
+	  			<div id="mypage_left">
+	  				<div style="position:absolute;z-index:100;width:525px;left:50px;">
+	  					<% include /member_info.ejs %>
+	  				</div>
+	  			</div>
+	  			<div id="mypage_right">
+	  				<div id="mypage_edit_btn"></div>
+	  			</div>
+	  		</div>
+	  		<div id="his_category" width="100%">
+	  			<div style="height:575px;">
+		  			<table id="his_table" cellspacing=0>
+		  				<tr style="background-color:#425232;height:32px;color:white;opacity:0.5;">
+		  					<td>num</td>
+		  					<td>Registration Date</td>
+		  					<td>Destination</td>
+		  					<td>Title</td>
+		  					<td>Area</td>
+		  					<td>Guide/Stay</td>
+		  				</tr>
+		  				<tr>
+		  					<td id="white_bg">num</td>
+		  					<td>Registration Date</td>
+		  					<td id="white_bg">Destination</td>
+		  					<td>Title</td>
+		  					<td id="white_bg">Area</td>
+		  					<td>Guide/Stay</td>
+		  				</tr>
+		  			</table>
+		  		</div>
+		  		<div id='his_num'>[1]</div>
+	  		</div>
+  			
+  		</div>
+  	</div>
+  </body>
+</html>
