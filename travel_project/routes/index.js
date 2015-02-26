@@ -4,16 +4,16 @@ var router = express.Router();
 exports.fnc = function(req,res){
 	var URL = req.url;
 	if(URL.indexOf('main') > 0 ){
-		res.render('main', { title: 'Express', URL: URL });
+		res.render('main.html', { title: 'Express', URL: URL });
 	}else if(URL.indexOf('board') > 0 ){
-		res.render('board', { title: 'Express', URL: URL });
+		res.render('board.html', { title: 'Express', URL: URL });
 	}else if(URL.indexOf('message') > 0 ){
-		res.render('message', { title: 'Express', URL: URL });
+		res.render('message.html', { title: 'Express', URL: URL });
 	}else if(URL.indexOf('talk') > 0 ){
-		res.render('talk', { title: 'Express', URL: URL });
+		res.render('talk.html', { title: 'Express', URL: URL });
 	}else if(URL.indexOf('mypage') > 0 ){
-		res.render('mypage', { title: 'Express', URL: URL });
+		res.render('mypage.html', { title: 'Express', URL: URL });
 	}else{
-		res.render('index', { title: 'Express', URL: URL });
+		res.render('index.html', { title: 'Express', URL: URL });
 	}
 }

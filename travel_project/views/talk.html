@@ -3,26 +3,44 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/css/style.css' />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
   
   <script>
-  
+  	var socket = io.connect('');
 	$(document).ready(function(){
+	
 		$(".detail_box").css("height", $("body").height() - $(".detail_title").height() - $("#top_bar").height() - 130 -60);
 		$(".detail_main").css("height", $(".detail_box").height() - $(".write_btn").height() - 50 );
-		$("#chat_place").css("width",$("#talk_container").width() - $("#chat_mbr").width() - 40);
+		$("#chat_place").css("width",$("#talk_container").width() - $("#chat_mbr").width() - 60);
 		$("#chat_place").css("height", $("#talk_container").height() - $("#msg_cnt").height() -20);
 		$("#chat_mbr").css("height",$("#chat_place").height());
 		$("#chat_mbr_list").css("height",$("#chat_mbr").height() - $("#chat_mbr_title").height() -24);
-		$("#msg_cnt").css("width",$("#talk_container").width() - $("#msg_send").width() - 20);
-	
-		$("#msg_send").click(function(){
+		$("#msg_cnt").css("width",$("#talk_container").width() - $("#msg_send").width() - 100);
+		
+		$(document).on("click", "#msg_send", function(){
 			var msg = $("#msg_cnt").val();
-			$("#msg_cnt").val("");
-			$("#chat_place").append("<div>"+msg+"</div>");
+			//e.preventDefault();
+			if( msg != '' ){
+				socket.emit('send message', msg);
+				$("#msg_cnt").val("");
+				$("#msg_cnt").focus();
+			}
 		});
+		
+		$("#msg_cnt").keydown(function (key) {
+            if (key.keyCode == 13) 
+            	$("#msg_send").trigger("click");
+       	});
+		
+		socket.on("new message", function(data){
+			$("#chat_place").append("<div>"+data+"</div>");
+			$("#chat_place").scrollTop( $("#chat_place").prop("scrollHeight") );
+		});
+		
 	});
+	
   </script>
   
   	<div id="container_detail">

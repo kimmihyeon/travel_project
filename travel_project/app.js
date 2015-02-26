@@ -8,14 +8,27 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
 global.url = require('url');
+global.socketio = require('socket.io');
 
-app.listen(80);
+server.listen(80);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('html',require('ejs').renderFile); 
+
+/*talk */
+io.sockets.on('connection', function(socket){
+	socket.on('send message', function(data){
+		//console.log("data 내용"+data);
+		io.sockets.emit('new message', data);
+	});
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
