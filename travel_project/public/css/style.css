@@ -12,7 +12,7 @@ a {
 }
 
 /* 첫페이지 관련 css */
-#container{width:100%; height:100%;background-image:url('/images/login_background.png');background-repeat:no-repeat; background-size:100% 100%;}
+#container{min-height:800px;overflow-y:scroll;width:100%; height:100%;background-image:url('/images/login_background.png');background-repeat:no-repeat; background-size:100% 100%;}
 #title{width:680px;height:100px;margin:0 auto;background-repeat:no-repeat;background-size:680px 100px;background-image:url('/images/title.png');padding-bottom:130px;top:100px;position:relative;}
 #icon{width:100px;height:120px;background-size:100px 120px;background-image:url('/images/icon_white.png');margin:0 auto; top:60px; position:relative;}
 #login_join{margin:0 auto;width:500px;height:500px;background-size:500px 500px;background-image:url('/images/circle.png');}
@@ -28,7 +28,7 @@ a {
 
 
 /* main관련 css */
-#container_main{width:100%; height:100%;background-image:url('/images/main_background.png');background-repeat:no-repeat; background-size:100% 100%;}
+#container_main{overflow-y:scroll;width:100%; height:100%;background-image:url('/images/main_background.png');background-repeat:no-repeat; background-size:100% 100%;}
 #top_bar{cursor:pointer;width:480px; height:45px;background-image:url('/images/bar.png');background-size:480px 45px;margin:0 auto;}
 #title_main{margin:0 auto;padding:30px 0px;display:table;}
 #mypage_btn{display:inline-block;float:right;color:#90b06d;font-size:20px; margin-right:10px;margin-top:8px;}
@@ -40,13 +40,13 @@ a {
 #talk_btn{background-size:330px 330px; background-image:url('/images/talk.png'); width:330px; height:330px; display:block; margin:0 auto;margin-bottom:10px;}
 
 #board_bar{background-size:10px 50%; background-image:url('/images/board_bar.png'); width:10px; height:50%;top:0px;left:20%;position:absolute;}
-#msg_bar{background-size:10px 50%; background-image:url('/images/message_bar.png'); width:10px; height:50%;bottom:0px;left:50%;position:absolute;}
-#talk_bar{background-size:10px 50%; background-image:url('/images/talk_bar.png'); width:10px; height:50%;top:0px;left:80%;position:absolute;}
+#msg_bar{background-size:10px 50%; background-image:url('/images/message_bar.png'); width:10px; height:50%;bottom:0px;left:49%;position:absolute;}
+#talk_bar{background-size:10px 50%; background-image:url('/images/talk_bar.png'); width:10px; height:50%;top:0px;right:21%;position:absolute;}
 #menu{margin-left:5%; margin-right:5%;height:400px;position:relative;}
 
 
 /* board, message, talk 공통 css */
-#container_detail{width:100%; height:100%;background-image:url('/images/detail_background.png');background-repeat:no-repeat; background-size:100% 100%;}
+#container_detail{overflow-y:scroll;width:100%; height:100%;background-image:url('/images/detail_background.png');background-repeat:no-repeat; background-size:100% 100%;}
 .detail_top{display:table;float:right;margin-right:100px;margin-top:40px;}
 .detail{min-width:500px;min-height:500px;width:80%; margin:0 auto;margin-top:130px;}
 .detail_main{background-color:white;position:relative;}

@@ -36,14 +36,7 @@
   </script>
   <body>
   	<div id="container_main">
-  		<div id="top_bar">
-  			<div id="logout_btn">logout</div>
-  			<div id="mypage_btn">mypage</div>
-  		</div>
-  		<div class="detail_top">
-  			<img src="/images/icon_black.png" width="50px" height="70px" style="margin-right:10px;margin-bottom:10px;"></img>
-  			<img src="/images/title.png" width="400px" height="55px"></img>
-  		</div>
+  		<% include /ejs/page_sametop %>
   		
   		<div class="container_mypage">
   			<div id="mypage_top">
@@ -57,7 +50,7 @@
   			<div id="info_category">
 	  			<div id="mypage_left">
 	  				<div style="position:absolute;z-index:100;width:525px;left:50px;">
-	  					<% include /member_info.ejs %>
+	  					<% include /ejs/member_info.ejs %>
 	  				</div>
 	  			</div>
 	  			<div id="mypage_right">
