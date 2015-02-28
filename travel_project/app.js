@@ -41,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes.fnc);
 app.use('/main', routes.fnc);
 app.use('/board', routes.fnc);
+app.use('/board_write', routes.fnc);
 app.use('/message', routes.fnc);
 app.use('/talk', routes.fnc);
 app.use('/mypage', routes.fnc);
